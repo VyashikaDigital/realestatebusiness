@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Homes for Sale and Rent | Summit &amp; Oak Realty</title><meta name="description" content="Search and compare homes and rentals in top U.S. markets."><meta name="theme-color" content="#071214">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body><header id="hdr"></header><main><section class="w" style="padding:40px 20px 80px"><h1 id="h1" data-t style="font-size:clamp(30px,5vw,48px)">Homes for sale</h1>
+<form class="sb" onsubmit="return false" style="margin:20px 0"><div class="tabs"><button type="button" data-m="buy" aria-pressed="true">Buy</button><button type="button" data-m="rent" aria-pressed="false">Rent</button></div>
+<div class="fg"><div><label for="fc">City</label><select id="fc"><option value="">All cities</option></select></div><div><label for="ft">Type</label><select id="ft"><option value="">Any type</option><option>House</option><option>Condo</option><option>Townhome</option></select></div><div><label for="fp">Max price</label><select id="fp"></select></div><div><label for="fb">Bedrooms</label><select id="fb"><option value="0">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div></div></form>
+<div class="bar"><strong id="count"></strong><div><button class="chip" id="so1" aria-pressed="false">Saved only</button><label for="so" style="margin:0">Sort</label><select id="so" style="width:auto"><option value="new">Newest</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="sq">Largest first</option></select></div></div>
+<div class="grid" id="grid" aria-live="polite"></div></section>
+<div class="tray" id="tray" hidden><span id="tn"></span><button class="btn sm" id="cgo">Compare</button><button class="btn alt sm" id="cclr">Clear</button></div>
+<dialog id="dlg" style="max-width:860px" aria-label="Compare properties"><button class="x" id="dx" aria-label="Close">&times;</button><div class="dc scr" id="dbody"></div></dialog></main><footer id="ftr"></footer><script src="common.js"></script><script>const q=new URLSearchParams(location.search);let mode=q.get("m")==="rent"?"rent":"buy",only=q.get("saved")==="1",cmp=new Set();
+function prices(){const o=mode==="buy"?[["Any price",0],["$400,000",4e5],["$600,000",6e5],["$800,000",8e5]]:[["Any price",0],["$2,500/mo",2500],["$3,000/mo",3000],["$3,500/mo",3500]];$("fp").innerHTML=o.map(a=>`<option value="${a[1]}">${a[0]}</option>`).join("")}
+function draw(){let r=L.filter(x=>x.m===mode);const c=$("fc").value,t=$("ft").value,p=+$("fp").value,b=+$("fb").value,s=$("so").value;
+ if(c)r=r.filter(x=>x.c===c);if(t)r=r.filter(x=>x.y===t);if(p)r=r.filter(x=>x.p<=p);if(b)r=r.filter(x=>x.b>=b);if(only)r=r.filter(x=>saved.has(x.id));
+ s==="lo"?r.sort((a,b)=>a.p-b.p):s==="hi"?r.sort((a,b)=>b.p-a.p):s==="sq"?r.sort((a,b)=>b.s-a.s):r.sort((a,b)=>b.id-a.id);
+ $("h1").dataset.en=mode==="buy"?"Homes for sale":"Homes for rent";applyLang();
+ $("count").textContent=r.length+(r.length===1?" property":" properties");
+ $("grid").innerHTML=r.length?r.map(x=>card(x,1)).join(""):`<div class="empty"><h3>No matches yet</h3><p class="sp" style="margin:6px 0 12px">Try another city, a higher price or fewer bedrooms.</p></div>`;
+ $$("[data-cmp]").forEach(k=>k.checked=cmp.has(+k.dataset.cmp));tray()}
+function tray(){$("tray").hidden=!cmp.size;$("tn").textContent=cmp.size+" selected (max 3)";$("cgo").disabled=cmp.size<2}
+loadData().then(()=>{[...new Set(L.map(x=>x.c))].sort().forEach(c=>$("fc").add(new Option(c,c)));$$(".tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===mode));$("so1").setAttribute("aria-pressed",only);prices();draw();tilt($("grid"),8,".card")});
+$$(".tabs button").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.m;$$(".tabs button").forEach(k=>k.setAttribute("aria-pressed",k===b));prices();draw()}));
+["fc","ft","fp","fb","so"].forEach(i=>$(i).addEventListener("change",draw));
+$("so1").addEventListener("click",e=>{only=!only;e.currentTarget.setAttribute("aria-pressed",only);draw()});
+$("grid").addEventListener("click",e=>{favClick(e,draw)});
+$("grid").addEventListener("change",e=>{const k=e.target.closest("[data-cmp]");if(!k)return;const id=+k.dataset.cmp;if(k.checked){if(cmp.size>=3){k.checked=false;return}cmp.add(id)}else cmp.delete(id);tray()});
+$("cclr").addEventListener("click",()=>{cmp.clear();draw()});
+$("cgo").addEventListener("click",()=>{const a=[...cmp].map(i=>L.find(x=>x.id===i));
+ const R=[["Price",x=>price(x)],["Type",x=>x.y],["City",x=>x.c],["Beds",x=>x.b],["Baths",x=>x.ba],["Sq ft",x=>x.s.toLocaleString("en-US")],["Price per sq ft",x=>x.m==="rent"?"$"+(x.p/x.s).toFixed(2)+"/mo":money(x.p/x.s)]];
+ $("dbody").innerHTML=`<h2 style="font-size:26px">Compare properties</h2><table class="tb" style="margin-top:12px"><thead><tr><th></th>${a.map(x=>`<th><a href="property.html?id=${x.id}">${x.t}</a></th>`).join("")}</tr></thead><tbody>${R.map(r=>`<tr><th>${r[0]}</th>${a.map(x=>`<td>${r[1](x)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;$("dlg").showModal()});
+$("dx").addEventListener("click",()=>$("dlg").close());$("dlg").addEventListener("click",e=>{if(e.target===$("dlg"))$("dlg").close()});</script></body></html>

@@ -47,7 +47,7 @@ function render(){
  $("savedNav").textContent="Saved ("+saved.size+")";
  $("grid").innerHTML=r.length?r.map(x=>`<article class="card"><div class="im"><button class="im" data-open="${x.id}" aria-label="View details for ${x.t}">${pic(x)}</button><span class="tag">${x.m==="buy"?"For sale":"For rent"}</span><button class="fav" data-fav="${x.id}" aria-pressed="${saved.has(x.id)}" aria-label="Save ${x.t}">&#9829;</button></div><div class="cb"><div class="pr">${price(x)}</div><h3 style="font-size:19px">${x.t}</h3><div class="sp">${x.b} bd &middot; ${x.ba} ba &middot; ${x.s.toLocaleString("en-US")} sqft</div><div class="sp">${x.c} &middot; ${x.y}</div><button class="btn alt" data-open="${x.id}" style="margin-top:8px">View details</button></div></article>`).join(""):`<div class="empty"><h3>No matches yet</h3><p class="sp" style="margin:6px 0 12px">Try a different city, a higher price or fewer bedrooms.</p><button class="btn" id="reset">Clear filters</button></div>`;
 }
-function openP(id){
+function openP(id){location.href="property.html?id="+id;return;
  const x=L.find(v=>v.id===id),q="Hi, I'm interested in "+x.t+" ("+x.c+", "+price(x)+"). Is it still available?";
  $("dbody").innerHTML=`${pic(x)}<div class="dc"><div class="pr">${price(x)}</div><h3 style="font-size:24px">${x.t}</h3><div class="sp">${x.c} &middot; ${x.y} &middot; ${x.b} bd &middot; ${x.ba} ba &middot; ${x.s.toLocaleString("en-US")} sqft</div><p>${x.n}</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="${wa(q)}" target="_blank" rel="noopener">Ask on WhatsApp</a><a class="btn alt" href="${mail("Inquiry: "+x.t,q)}">Email an agent</a></div></div>`;
  $("dlg").showModal();
