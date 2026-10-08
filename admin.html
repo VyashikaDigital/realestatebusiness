@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin | Summit &amp; Oak Realty</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>.tb{width:100%;border-collapse:collapse}.tb td,.tb th{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}.tb img{width:64px;height:44px;object-fit:cover;border-radius:6px}.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}.st .panel{padding:14px}.st b{font:700 28px "Bricolage Grotesque";color:var(--amber)}.f3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:10px}.sm{padding:6px 12px;font-size:14px}.scr{overflow-x:auto}</style></head>
+<body>
+<header><div class="w"><a class="logo" href="index.html">Summit &amp; Oak Admin</a><nav><a href="index.html">View site</a><button class="chip" id="out" hidden>Log out</button></nav></div></header>
+<main class="w" style="padding:30px 20px 60px">
+<form class="panel" id="login" style="max-width:420px;margin:40px auto"><h2 id="lt">Admin login</h2><p class="sp" id="lh" style="margin:6px 0 14px"></p><label for="pw">Password</label><input id="pw" type="password" required minlength="8" autocomplete="current-password"><p class="sp" id="le" role="alert" style="margin:8px 0"></p><button class="btn" type="submit">Continue</button></form>
+<div id="app" hidden>
+<h1 style="font-size:34px">Dashboard</h1>
+<div class="st" id="st"></div>
+<div class="panel"><h2 style="font-size:24px" id="ft">Add a property</h2>
+<form id="pf" style="margin-top:12px"><input type="hidden" id="eid">
+<div class="f3"><div><label for="t">Title</label><input id="t" required></div><div><label for="c">City, State</label><input id="c" required placeholder="Austin, TX"></div><div><label for="y">Type</label><select id="y"><option>House</option><option>Condo</option><option>Townhome</option></select></div><div><label for="m">Listing</label><select id="m"><option value="buy">For sale</option><option value="rent">For rent</option></select></div></div>
+<div class="f3"><div><label for="p">Price ($, or $/month for rent)</label><input id="p" type="number" min="0" required></div><div><label for="b">Beds</label><input id="b" type="number" min="0" required></div><div><label for="ba">Baths</label><input id="ba" type="number" min="0" required></div><div><label for="s">Sq ft</label><input id="s" type="number" min="0" required></div></div>
+<div style="margin-bottom:10px"><label for="i">Photo URL (or Unsplash photo ID)</label><input id="i" placeholder="https://images.unsplash.com/photo-..."></div>
+<div style="margin-bottom:10px"><label for="n">Description</label><textarea id="n" rows="3" required></textarea></div>
+<button class="btn" type="submit" id="sv">Add property</button> <button class="btn alt" type="button" id="cl">Clear form</button></form></div>
+<div class="panel" style="margin-top:20px"><div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center"><h2 style="font-size:24px">Properties</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="ex">Download listings.json</button><button class="btn alt sm" id="imb">Import JSON</button><button class="btn alt sm" id="rs">Reset to published</button><input type="file" id="imf" accept=".json" hidden></div></div>
+<p class="sp" style="margin:8px 0 12px">Changes show on this browser right away. To publish them for everyone, download <b>listings.json</b> and upload it to your GitHub repo, replacing the old one.</p>
+<div class="scr"><table class="tb"><thead><tr><th>Photo</th><th>Title</th><th>City</th><th>Price</th><th>Type</th><th></th></tr></thead><tbody id="tb"></tbody></table></div></div>
+<p class="sp" id="msg" role="status" style="margin-top:14px"></p></div></main>
+<script src="admin.js"></script></body></html>

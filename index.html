@@ -5,110 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Summit &amp; Oak Realty | Homes for Sale and Rent (Demo by Vyashika Digital)</title>
 <meta name="description" content="Search homes, condos and rentals across top U.S. markets. Save favorites, estimate your mortgage, and contact an agent on WhatsApp or email.">
+<meta property="og:title" content="Summit &amp; Oak Realty | Homes for Sale and Rent">
+<meta property="og:description" content="Search homes, condos and rentals in top U.S. markets. Estimate your payment and contact an agent on WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#071214">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--pine:#0f3d3e;--mist:#eef3f2;--ink:#14201f;--amber:#e0a526;--line:#d3dddb;--card:#fff;--mute:#566866}
-*{box-sizing:border-box;margin:0}
-body{font:17px/1.55 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--mist)}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.w{max-width:1160px;margin:0 auto;padding:0 20px}
-header{background:var(--pine);color:#fff;position:sticky;top:0;z-index:5}
-header .w{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
-.logo{font:700 20px "Bricolage Grotesque";text-decoration:none}
-nav{display:flex;gap:20px;align-items:center}
-nav a{text-decoration:none;font-size:15px}
-.hero{background:var(--pine);color:#fff;padding:56px 0 84px}
-.hero h1{font-size:clamp(34px,6vw,62px);max-width:14ch;letter-spacing:-.02em}
-.hero p{margin:16px 0 0;max-width:46ch;color:#cfe0dc}
-.sb{background:#fff;color:var(--ink);border-radius:14px;margin-top:32px;padding:16px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
-.tabs{display:flex;gap:6px;margin-bottom:12px}
-.tabs button{border:0;background:var(--mist);padding:8px 18px;border-radius:99px;font:600 15px inherit;cursor:pointer}
-.tabs button[aria-pressed=true]{background:var(--pine);color:#fff}
-.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-label{font-size:13px;color:var(--mute);display:block;margin-bottom:3px}
-select,input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink)}
-.btn{background:var(--amber);color:#1a1300;border:0;border-radius:8px;padding:11px 20px;font:700 16px inherit;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
-.btn.alt{background:var(--pine);color:#fff}
-section{padding:60px 0}
-h2{font-size:clamp(26px,4vw,38px);margin-bottom:6px}
-.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:space-between;margin:14px 0 22px}
-.bar>div{display:flex;gap:10px;align-items:center}
-.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:7px 14px;font:600 14px inherit;cursor:pointer}
-.chip[aria-pressed=true]{background:var(--pine);color:#fff;border-color:var(--pine)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
-.card .im{position:relative;cursor:pointer;display:block;width:100%;border:0;padding:0;background:none}
-.card svg{display:block;width:100%;height:auto}
-.tag{position:absolute;left:10px;top:10px;background:var(--pine);color:#fff;font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px}
-.fav{position:absolute;right:10px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:20px;cursor:pointer;color:var(--mute)}
-.fav[aria-pressed=true]{color:#d6336c}
-.cb{padding:14px 16px 16px;display:grid;gap:4px}
-.pr{font:700 24px "Bricolage Grotesque"}
-.sp{color:var(--mute);font-size:15px}
-.empty{padding:40px;text-align:center;background:#fff;border-radius:14px;border:1px dashed var(--line);grid-column:1/-1}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:start}
-.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
-.out{font:700 40px "Bricolage Grotesque";color:var(--pine);margin:6px 0}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.agent{background:var(--pine);color:#fff}
-.agent a{color:var(--amber)}
-dialog{border:0;border-radius:16px;max-width:620px;width:calc(100% - 24px);padding:0}
-dialog::backdrop{background:rgba(10,25,25,.6)}
-.dc{padding:18px 20px 22px;display:grid;gap:10px}
-.x{position:absolute;right:10px;top:10px;border:0;background:#fff;width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer}
-footer{background:var(--ink);color:#b9c7c4;padding:30px 0;font-size:15px}
-footer a{color:#fff}
-.ok{color:#0a7a4b;font-weight:600}
-@media(max-width:640px){nav a.h{display:none}}
-@media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-3px)}}
-
-body{background:#071214;color:#e7efed}
-:root{--pine:#0b1d20;--mist:#071214;--ink:#e7efed;--line:rgba(255,255,255,.13);--card:rgba(255,255,255,.05);--mute:#9db3b0;--amber:#e3bd72}
-header{background:rgba(7,18,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.hero{background:radial-gradient(900px 500px at 85% 10%,rgba(45,212,191,.22),transparent 60%),radial-gradient(700px 500px at 0 100%,rgba(227,189,114,.14),transparent 60%),#071214;overflow:hidden}
-.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
-.hero .sb{grid-column:1/-1}
-.sb,.panel,.empty{background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid var(--line);color:var(--ink)}
-.sb{box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.tabs button,.chip{background:rgba(255,255,255,.08);color:var(--ink);border:1px solid var(--line)}
-.tabs button[aria-pressed=true],.chip[aria-pressed=true]{background:var(--amber);color:#1a1300;border-color:var(--amber)}
-select,input,textarea{background:rgba(255,255,255,.07);color:var(--ink);border-color:var(--line)}
-select option{background:#0b1d20;color:#e7efed}
-.btn.alt{background:rgba(255,255,255,.1);color:#fff;border:1px solid var(--line)}
-.card{background:var(--card);backdrop-filter:blur(8px);will-change:transform}
-.card:hover{box-shadow:0 24px 50px rgba(0,0,0,.45)}
-#calc{border-block:1px solid var(--line)}
-.out{color:var(--amber)}
-.agent{background:linear-gradient(160deg,rgba(45,212,191,.14),rgba(255,255,255,.04))}
-dialog{background:#0d2024;color:var(--ink);border:1px solid var(--line)}
-.fav,.x{color:#14201f}
-footer{background:#040b0c;color:#9db3b0;border-top:1px solid var(--line)}
-.mapf{width:100%;height:440px;border:1px solid var(--line);border-radius:16px}
-.ph{position:relative;width:170px;height:200px;border-radius:18px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line);background:linear-gradient(145deg,#1c4a4d,#0b1d20);display:grid;place-items:center;font:700 56px "Bricolage Grotesque";color:var(--amber);box-shadow:0 20px 40px rgba(0,0,0,.4);will-change:transform}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.scene{height:380px;perspective:1100px;display:flex;align-items:center;justify-content:center}
-.world{position:relative;width:0;height:0;transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(35deg);animation:spin 48s linear infinite}
-.scene:hover .world{animation-play-state:paused}
-.gp{position:absolute;left:-230px;top:-230px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 30px),repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 30px)}
-.b{position:absolute;transform-style:preserve-3d}
-.f{display:block;position:absolute;left:0;top:0;transform-origin:0 0;background:hsla(var(--h),40%,30%,.94)}
-.s1,.s2{background-image:repeating-linear-gradient(0deg,transparent 0 14px,rgba(255,226,160,.4) 14px 19px)}
-.s2{filter:brightness(.72)}
-.tp{background:hsl(var(--h),45%,62%)}
-@keyframes spin{to{transform:rotateX(62deg) rotateZ(395deg)}}
-@media(prefers-reduced-motion:reduce){.world{animation:none}}
-@media(max-width:820px){.hero .w{grid-template-columns:1fr}.scene{height:280px;transform:scale(.8)}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header><div class="w"><a class="logo" href="#top">Summit &amp; Oak Realty</a>
-<nav><a class="h" href="#listings">Listings</a><a class="h" href="#map">Map</a><a class="h" href="#calc">Mortgage calculator</a><a class="h" href="#contact">Contact</a><a href="#listings" id="savedNav">Saved (0)</a></nav></div></header>
+<nav><a data-t="nl" class="h" href="#listings">Listings</a><a data-t="nm" class="h" href="#map">Map</a><a data-t="nc" class="h" href="#calc">Mortgage calculator</a><a data-t="nt" class="h" href="#contact">Contact</a><button class="chip" id="lng" aria-label="Switch language">हिं</button><button class="chip" id="thm" aria-label="Switch light or dark theme">Theme</button><a href="#listings" id="savedNav">Saved (0)</a></nav></div></header>
 
 <main id="top">
 <div class="hero"><div class="w">
-<div><h1>Find the home that fits your life.</h1>
+<div><h1 data-t="h1">Find the home that fits your life.</h1>
 <p>Browse homes, condos and rentals in six growing U.S. markets. Save your favorites and talk to an agent the same day.</p></div><div class="scene" id="scene" aria-hidden="true"><div class="world" id="world"><div class="gp"></div></div></div>
 <form class="sb" id="sf" aria-label="Property search">
 <div class="tabs" role="group" aria-label="Listing type"><button type="button" data-m="buy" aria-pressed="true">Buy</button><button type="button" data-m="rent" aria-pressed="false">Rent</button></div>
@@ -117,11 +28,11 @@ footer{background:#040b0c;color:#9db3b0;border-top:1px solid var(--line)}
 <div><label for="ft">Property type</label><select id="ft"><option value="">Any type</option><option>House</option><option>Condo</option><option>Townhome</option></select></div>
 <div><label for="fp">Max price</label><select id="fp"></select></div>
 <div><label for="fb">Bedrooms</label><select id="fb"><option value="0">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
-<div style="align-self:end"><button class="btn" style="width:100%" type="submit">Search homes</button></div>
+<div style="align-self:end"><button class="btn" style="width:100%" data-t="sh" type="submit">Search homes</button></div>
 </div></form></div></div>
 
 <section id="listings"><div class="w">
-<h2>Featured properties</h2>
+<h2 data-t="fp">Featured properties</h2>
 <p class="sp">Sample listings for demonstration.</p>
 <div class="bar"><div><strong id="count"></strong></div>
 <div><button class="chip" id="savedOnly" aria-pressed="false">Saved only</button>
@@ -130,16 +41,29 @@ footer{background:#040b0c;color:#9db3b0;border-top:1px solid var(--line)}
 </div></section>
 
 <section id="calc" style="background:rgba(255,255,255,.03)"><div class="w two">
-<div><h2>Estimate your monthly payment</h2><p class="sp">Adjust the numbers to see principal and interest. Taxes, insurance and HOA are not included.</p></div>
+<div><h2 data-t="em">Estimate your monthly payment</h2><p class="sp">Adjust the numbers to see principal and interest. Taxes, insurance and HOA are not included.</p></div>
 <div class="panel">
 <div class="row"><div><label for="cp">Home price ($)</label><input id="cp" type="number" value="450000" min="0"></div><div><label for="cd">Down payment (%)</label><input id="cd" type="number" value="20" min="0" max="100"></div></div>
 <div class="row"><div><label for="cr">Interest rate (%)</label><input id="cr" type="number" value="6.5" step="0.05" min="0"></div><div><label for="cy">Loan term</label><select id="cy"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select></div></div>
-<div class="sp">Estimated payment</div><div class="out" id="cout">$0</div><div class="sp" id="cnote"></div>
+<div class="sp">Estimated payment</div><div class="out" id="cout">$0</div><div class="sp" id="cnote"></div><div class="donut" id="dn" role="img" aria-label="Principal versus interest"></div><div class="sp" id="dnote"></div>
 </div></div></section>
 
-<section id="map"><div class="w"><h2>Explore by city</h2><p class="sp">Pick a market to see it on the map, then jump straight to its homes.</p>
+<section id="map"><div class="w"><h2 data-t="ec">Explore by city</h2><p class="sp">Pick a market to see it on the map, then jump straight to its homes.</p>
 <div class="bar"><div id="mchips" style="flex-wrap:wrap"></div><button class="btn" id="mgo"></button></div>
 <iframe id="mframe" class="mapf" title="Map of the selected city" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
+<section id="reviews"><div class="w"><h2 data-t="tt">What clients say</h2><p class="sp">Sample reviews for demonstration.</p><div class="grid" style="margin-top:20px">
+<blockquote class="panel"><p>They found us a 3-bed in Austin in nine days and handled every question on WhatsApp.</p><p class="sp" style="margin-top:10px">Megan R., first-time buyer</p></blockquote>
+<blockquote class="panel"><p>The payment calculator showed us what we could really afford before we visited a single house.</p><p class="sp" style="margin-top:10px">Daniel and Priya S., Charlotte</p></blockquote>
+<blockquote class="panel"><p>Clear listings, honest advice, no pressure. We signed our lease the same week.</p><p class="sp" style="margin-top:10px">Chris T., renter in Nashville</p></blockquote></div></div></section>
+<section id="guides" style="background:rgba(255,255,255,.03)"><div class="w"><h2 data-t="bl">Buying and renting guides</h2><div class="grid" style="margin-top:20px">
+<article class="panel"><h3>How much house can you afford?</h3><p class="sp" style="margin-top:8px">Start with your monthly budget, not the lender's maximum. Keep housing near 28 percent of gross income.</p></article>
+<article class="panel"><h3>Renting or buying: how to decide</h3><p class="sp" style="margin-top:8px">If you plan to stay five years or more and can cover repairs, buying usually wins. Otherwise renting keeps you flexible.</p></article>
+<article class="panel"><h3>Five checks before making an offer</h3><p class="sp" style="margin-top:8px">Inspection, comparable sales, HOA fees, property taxes and the roof's age.</p></article></div></div></section>
+<section id="faq"><div class="w" style="max-width:800px"><h2 data-t="fq">Frequently asked questions</h2>
+<details class="panel" style="margin-top:16px"><summary>How fast will an agent reply?</summary><p class="sp" style="margin-top:8px">Within one business day, and usually within hours on WhatsApp.</p></details>
+<details class="panel" style="margin-top:10px"><summary>Does it cost anything to use the site?</summary><p class="sp" style="margin-top:8px">No. Searching, saving homes and requesting a callback are free.</p></details>
+<details class="panel" style="margin-top:10px"><summary>Can I schedule a tour?</summary><p class="sp" style="margin-top:8px">Open a property, tap Ask on WhatsApp and tell us your preferred day and time.</p></details>
+<details class="panel" style="margin-top:10px"><summary>Are these listings real?</summary><p class="sp" style="margin-top:8px">This is a demo, so listings are samples. Photos are free-license images from Unsplash.</p></details></div></section>
 <section id="contact"><div class="w two">
 <div class="panel agent"><div class="ph" id="ph"><img src="agent.jpg" alt="Vijay Kumar, founder and lead advisor" onerror="this.remove()"><span>VK</span></div><h2>Talk to Vijay Kumar</h2>
 <p style="margin:10px 0">Founder and lead advisor. Tell us your budget, city and timeline, and we will reply with matching homes.</p>
@@ -153,110 +77,10 @@ footer{background:#040b0c;color:#9db3b0;border-top:1px solid var(--line)}
 </div></section>
 </main>
 
-<footer><div class="w">&copy; <span id="yr"></span> Summit &amp; Oak Realty. Sample listings, prices and photos are for demonstration only.<br>Website by <a href="https://www.vyashikadigital.com">Vyashika Digital</a>, websites that grow your business.</div></footer>
+<footer><div class="w">&copy; <span id="yr"></span> Summit &amp; Oak Realty. Sample listings, prices and photos are for demonstration only.<br>Website by <a href="https://www.vyashikadigital.com">Vyashika Digital</a>, websites that grow your business.<br>Photos by <a href="https://unsplash.com">Unsplash</a> contributors. <a href="admin.html">Admin login</a></div></footer>
 
 <dialog id="dlg" aria-label="Property details"><button class="x" id="dx" aria-label="Close">&times;</button><div id="dbody"></div></dialog>
 
-<script>
-const CFG={wa:"919555083044",email:"vyashikadigital@gmail.com",brand:"Summit & Oak Realty"};
-const L=[
-{id:1,t:"Hill Country Modern",c:"Austin, TX",y:"House",m:"buy",p:685000,b:4,ba:3,s:2850,h:160,n:"Open floor plan, chef's kitchen, covered patio and a two-car garage near top-rated schools."},
-{id:2,t:"Bayfront Corner Condo",c:"Miami, FL",y:"Condo",m:"buy",p:540000,b:2,ba:2,s:1320,h:200,n:"Floor-to-ceiling windows, water views, a resort-style pool and 24-hour concierge."},
-{id:3,t:"Desert Ridge Ranch",c:"Phoenix, AZ",y:"House",m:"buy",p:459000,b:3,ba:2,s:2100,h:25,n:"Single-story home with a pool, solar panels and a low-maintenance desert yard."},
-{id:4,t:"Uptown Townhome",c:"Charlotte, NC",y:"Townhome",m:"buy",p:398000,b:3,ba:3,s:1780,h:340,n:"Walkable to light rail, restaurants and parks. Rooftop deck and attached garage."},
-{id:5,t:"Music Row Loft",c:"Nashville, TN",y:"Condo",m:"rent",p:2450,b:1,ba:1,s:920,h:280,n:"Exposed brick, 12-foot ceilings, in-unit laundry and pet-friendly building."},
-{id:6,t:"Garden Bungalow",c:"Denver, CO",y:"House",m:"buy",p:725000,b:4,ba:3,s:2400,h:100,n:"Renovated 1940s bungalow with a fenced yard and finished basement."},
-{id:7,t:"Harbor View Apartment",c:"Tampa, FL",y:"Condo",m:"rent",p:2980,b:2,ba:2,s:1210,h:180,n:"Balcony, gym, covered parking and a short walk to the Riverwalk."},
-{id:8,t:"Family Craftsman",c:"Austin, TX",y:"House",m:"rent",p:3650,b:4,ba:3,s:2300,h:40,n:"Available now. Large yard, two living areas, close to downtown."},
-{id:9,t:"Midtown Townhome",c:"Denver, CO",y:"Townhome",m:"rent",p:3100,b:3,ba:2,s:1650,h:300,n:"Bright end unit with a private patio and two reserved parking spots."}];
-const $=id=>document.getElementById(id),$$=s=>[...document.querySelectorAll(s)];
-let mode="buy",saved=new Set(),onlySaved=false;
-try{saved=new Set(JSON.parse(localStorage.getItem("so_saved")||"[]"))}catch(e){}
-const store=()=>{try{localStorage.setItem("so_saved",JSON.stringify([...saved]))}catch(e){}};
-const money=n=>"$"+n.toLocaleString("en-US");
-const price=x=>x.m==="rent"?money(x.p)+"/mo":money(x.p);
-const wa=m=>"https://wa.me/"+CFG.wa+"?text="+encodeURIComponent(m);
-const mail=(s,m)=>"mailto:"+CFG.email+"?subject="+encodeURIComponent(s)+"&body="+encodeURIComponent(m);
-function art(h){return `<svg viewBox="0 0 320 200" role="img" aria-label="Illustration of the property"><defs><linearGradient id="g${h}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(${h},55%,82%)"/><stop offset="1" stop-color="hsl(${h},45%,94%)"/></linearGradient></defs><rect width="320" height="200" fill="url(#g${h})"/><circle cx="268" cy="44" r="18" fill="#fff" opacity=".8"/><rect y="150" width="320" height="50" fill="hsl(${h},30%,38%)"/><rect x="70" y="86" width="180" height="70" fill="hsl(${h},25%,96%)"/><polygon points="58,90 160,36 262,90" fill="hsl(${h},45%,28%)"/><rect x="146" y="112" width="28" height="44" fill="hsl(${h},45%,28%)"/><rect x="88" y="104" width="38" height="28" fill="hsl(${h},60%,75%)"/><rect x="194" y="104" width="38" height="28" fill="hsl(${h},60%,75%)"/></svg>`}
-function init(){
- [...new Set(L.map(x=>x.c))].sort().forEach(c=>$("fc").add(new Option(c,c)));
- $("yr").textContent=new Date().getFullYear();
- $("aph").href=wa("Hi, I'd like to talk about a property.");$("aem").href="mailto:"+CFG.email;
- setPrices();calc();render();
-}
-function setPrices(){
- const o=mode==="buy"?[["Any price",0],["$400,000",400000],["$600,000",600000],["$800,000",800000]]:[["Any price",0],["$2,500/mo",2500],["$3,000/mo",3000],["$3,500/mo",3500]];
- $("fp").innerHTML=o.map(a=>`<option value="${a[1]}">${a[0]}</option>`).join("");
-}
-function list(){
- let r=L.filter(x=>x.m===mode);
- const c=$("fc").value,t=$("ft").value,p=+$("fp").value,b=+$("fb").value;
- if(c)r=r.filter(x=>x.c===c);if(t)r=r.filter(x=>x.y===t);if(p)r=r.filter(x=>x.p<=p);if(b)r=r.filter(x=>x.b>=b);
- if(onlySaved)r=r.filter(x=>saved.has(x.id));
- const s=$("so").value;
- if(s==="lo")r.sort((a,b)=>a.p-b.p);else if(s==="hi")r.sort((a,b)=>b.p-a.p);else if(s==="sq")r.sort((a,b)=>b.s-a.s);else r.sort((a,b)=>b.id-a.id);
- return r;
-}
-function render(){
- const r=list();
- $("count").textContent=r.length+(r.length===1?" property":" properties")+(mode==="buy"?" for sale":" for rent");
- $("savedNav").textContent="Saved ("+saved.size+")";
- $("grid").innerHTML=r.length?r.map(x=>`<article class="card"><div class="im"><button class="im" data-open="${x.id}" aria-label="View details for ${x.t}">${art(x.h)}</button><span class="tag">${x.m==="buy"?"For sale":"For rent"}</span><button class="fav" data-fav="${x.id}" aria-pressed="${saved.has(x.id)}" aria-label="Save ${x.t}">&#9829;</button></div><div class="cb"><div class="pr">${price(x)}</div><h3 style="font-size:19px">${x.t}</h3><div class="sp">${x.b} bd &middot; ${x.ba} ba &middot; ${x.s.toLocaleString("en-US")} sqft</div><div class="sp">${x.c} &middot; ${x.y}</div><button class="btn alt" data-open="${x.id}" style="margin-top:8px">View details</button></div></article>`).join(""):`<div class="empty"><h3>No matches yet</h3><p class="sp" style="margin:6px 0 12px">Try a different city, a higher price or fewer bedrooms.</p><button class="btn" id="reset">Clear filters</button></div>`;
-}
-function openP(id){
- const x=L.find(v=>v.id===id),q="Hi, I'm interested in "+x.t+" ("+x.c+", "+price(x)+"). Is it still available?";
- $("dbody").innerHTML=`${art(x.h)}<div class="dc"><div class="pr">${price(x)}</div><h3 style="font-size:24px">${x.t}</h3><div class="sp">${x.c} &middot; ${x.y} &middot; ${x.b} bd &middot; ${x.ba} ba &middot; ${x.s.toLocaleString("en-US")} sqft</div><p>${x.n}</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="${wa(q)}" target="_blank" rel="noopener">Ask on WhatsApp</a><a class="btn alt" href="${mail("Inquiry: "+x.t,q)}">Email an agent</a></div></div>`;
- $("dlg").showModal();
-}
-function calc(){
- const P=+$("cp").value||0,d=Math.min(Math.max(+$("cd").value||0,0),100),r=(+$("cr").value||0)/1200,n=(+$("cy").value)*12,L0=P*(1-d/100);
- const m=r?L0*r/(1-Math.pow(1+r,-n)):L0/n;
- $("cout").textContent=money(Math.round(m))+"/mo";
- $("cnote").textContent="Loan amount "+money(Math.round(L0))+" with "+money(Math.round(P-L0))+" down.";
-}
-$("sf").addEventListener("submit",e=>{e.preventDefault();render();$("listings").scrollIntoView({behavior:"smooth"})});
-$$(".tabs button").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.m;$$(".tabs button").forEach(k=>k.setAttribute("aria-pressed",k===b));setPrices();render()}));
-["fc","ft","fp","fb","so"].forEach(i=>$(i).addEventListener("change",render));
-$("savedOnly").addEventListener("click",e=>{onlySaved=!onlySaved;e.currentTarget.setAttribute("aria-pressed",onlySaved);render()});
-$("savedNav").addEventListener("click",()=>{onlySaved=true;$("savedOnly").setAttribute("aria-pressed","true");render()});
-$("grid").addEventListener("click",e=>{
- const o=e.target.closest("[data-open]"),f=e.target.closest("[data-fav]");
- if(o)openP(+o.dataset.open);
- if(f){const id=+f.dataset.fav;saved.has(id)?saved.delete(id):saved.add(id);store();render()}
- if(e.target.id==="reset"){["fc","ft","fp"].forEach(i=>$(i).value="");$("fb").value="0";onlySaved=false;$("savedOnly").setAttribute("aria-pressed","false");render()}
-});
-$("dx").addEventListener("click",()=>$("dlg").close());
-$("dlg").addEventListener("click",e=>{if(e.target===$("dlg"))$("dlg").close()});
-["cp","cd","cr","cy"].forEach(i=>$(i).addEventListener("input",calc));
-$("cf").addEventListener("submit",e=>{
- e.preventDefault();
- const ch=e.submitter&&e.submitter.dataset.ch,m="Name: "+$("cn").value+"\nPhone: "+$("cph").value+"\n"+$("cm").value;
- if(ch==="em")location.href=mail("Property inquiry from "+$("cn").value,m);else window.open(wa(m),"_blank","noopener");
- $("cok").textContent="Thanks, "+$("cn").value+". Your message is ready to send.";
-});
-init();
-(function(){
-const W=$("world");
-[[-130,-100,70,70,150,170],[-40,-120,60,60,90,190],[40,-70,80,80,210,160],[-120,10,60,80,70,200],[10,40,70,60,120,175],[100,50,60,60,60,185],[-30,-30,40,40,250,165]].forEach(([x,y,w,d,h,hu])=>{
- const b=document.createElement("div");b.className="b";b.style.cssText=`left:${x}px;top:${y}px;width:${w}px;height:${d}px`;
- const f=(c,a,z,t)=>`<i class="f ${c}" style="width:${a}px;height:${z}px;--h:${hu};transform:${t}"></i>`;
- b.innerHTML=f("s1",w,h,"rotateX(90deg)")+f("s1",w,h,`translateY(${d}px) rotateX(90deg)`)+f("s2",d,h,"rotateZ(90deg) rotateX(90deg)")+f("s2",d,h,`translateX(${w}px) rotateZ(90deg) rotateX(90deg)`)+f("tp",w,d,`translateZ(${h}px)`);
- W.appendChild(b);
-});
-if(matchMedia("(hover:hover)").matches){
- const tilt=(el,k)=>{
-  el.addEventListener("pointermove",e=>{const c=(el.id==="grid"?e.target.closest(".card"):el);if(!c)return;const r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${px*k}deg) rotateX(${-py*k}deg)`});
-  el.addEventListener("pointerout",e=>{const c=(el.id==="grid"?e.target.closest(".card"):el);if(c&&!c.contains(e.relatedTarget))c.style.transform=""});
- };
- tilt($("grid"),10);tilt($("ph"),14);
-}
-const cities=[...new Set(L.map(x=>x.c))];let cur="";
-function setMap(c){cur=c;$("mframe").src="https://maps.google.com/maps?q="+encodeURIComponent(c)+"&z=11&output=embed";$$("#mchips .chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.c===c));$("mgo").textContent="See homes in "+c}
-$("mchips").innerHTML=cities.map(c=>`<button class="chip" data-c="${c}" aria-pressed="false">${c}</button>`).join("");
-$("mchips").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b)setMap(b.dataset.c)});
-$("mgo").addEventListener("click",()=>{$("fc").value=cur;onlySaved=false;$("savedOnly").setAttribute("aria-pressed","false");render();$("listings").scrollIntoView({behavior:"smooth"})});
-setMap(cities[0]);
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
